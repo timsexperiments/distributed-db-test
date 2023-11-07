@@ -1,10 +1,10 @@
 module github.com/timsexperiments/distributed-db-test
 
-go 1.21.2
+go 1.21.3
 
 require (
 	github.com/joho/godotenv v1.5.1
-	github.com/libsql/libsql-client-go v0.0.0-20231009080222-ee74a605841b
+	github.com/libsql/libsql-client-go v0.0.0-20231026052543-fce76c0f39a7
 )
 
 require (

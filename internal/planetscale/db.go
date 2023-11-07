@@ -70,7 +70,7 @@ func (db PlanetScale) ReadTestData(id int64) (*test.TestData, error) {
 }
 
 func (db PlanetScale) WriteTestData(data test.TestData) error {
-	insertQuery := fmt.Sprintf("INSERT INTO testdata (id, text, timestamp) VALUES (%d, '%s', '%s')", data.Key, data.Text, data.Timestamp.Format(time.RFC3339Nano))
+	insertQuery := fmt.Sprintf("INSERT INTO testdata (id, text, timestamp) VALUES (%d, '%s', '%s')", data.Key, data.Text, data.Timestamp.Format("2006-01-02 15:04:05.999999"))
 	_, err := db.Exec(insertQuery)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %s\n", err)
@@ -118,7 +118,6 @@ func (db PlanetScale) Exec(sql string) (*QueryResponse, error) {
 		fmt.Fprintf(os.Stderr, "Error: %s\n", err)
 		return nil, err
 	}
-
 	return &response, nil
 }
 
@@ -171,7 +170,9 @@ func parseRows(response QueryResponse) ([]map[string]any, error) {
 			}
 			rowValue[name] = goValue
 		}
-		result[i] = rowValue
+		if i < len(rows) {
+			result[i] = rowValue
+		}
 	}
 
 	return result, nil
