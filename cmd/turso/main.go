@@ -25,7 +25,7 @@ func main() {
 	db.Exec("CREATE TABLE IF NOT EXISTS testdata (key INT PRIMARY KEY, text VARCHAR(255), timestamp DATETIME)")
 
 	turso := &turso.Turso{Db: db}
-	total, group, pause := 1000, 100, time.Duration(12)*time.Second
+	total, group, pause := 1000, 100, time.Duration(10)*time.Second // I keep getting rate limited on Turso. Pause prevents this.
 
 	tester := test.NewDbTester(turso).WithTotal(total).WithPause(pause).WithWaitGroup(group)
 	writeTotal, writeAverage := tester.TimeWrites()
