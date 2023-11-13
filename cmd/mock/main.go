@@ -14,7 +14,7 @@ func main() {
 	tester := test.NewDbTester(mockDB).WithTotal(total).WithWaitGroup(group)
 
 	totalWriteTime, averageWriteTime := tester.TimeWrites()
-	fmt.Printf("Wrote %d rows in %s. Average write time was %s.\n", total, totalWriteTime, averageWriteTime)
+	fmt.Printf("Wrote %d records in %s. Average write time was %s.\n", total, totalWriteTime, averageWriteTime)
 	totalReadTime, averageReadTime := tester.TimeReads()
-	fmt.Printf("Read %d rows in %s. Average read time was %s.\n", total, totalReadTime, averageReadTime)
+	fmt.Printf("Read %d records in %s. Average read time was %s.\n", total, totalReadTime, averageReadTime)
 }

@@ -77,14 +77,14 @@ func (tester *dbTester) TimeWrites() (time.Duration, time.Duration) {
 		}
 		wg.Wait()
 		if tester.verbose {
-			fmt.Printf("Wrote %d rows.\n", waitGroup)
+			fmt.Printf("Wrote %d records.\n", waitGroup)
 			fmt.Printf("Waiting for %s.\n", pause)
 		}
 		time.Sleep(pause)
 	}
 
 	if tester.verbose {
-		fmt.Printf("Done writing %d rows.\n", total)
+		fmt.Printf("Done writing %d records.\n", total)
 	}
 
 	totalTime := sum(writeTimes)
@@ -126,14 +126,14 @@ func (tester dbTester) TimeReads() (time.Duration, time.Duration) {
 		}
 		wg.Wait()
 		if tester.verbose {
-			fmt.Printf("Read %d rows.\n", waitGroup)
+			fmt.Printf("Read %d records.\n", waitGroup)
 			fmt.Printf("Waiting for %s.\n", pause)
 		}
 		time.Sleep(pause)
 	}
 
 	if tester.verbose {
-		fmt.Printf("Done reading %d rows.\n", total)
+		fmt.Printf("Done reading %d records.\n", total)
 	}
 
 	totalTime := sum(readTimes)

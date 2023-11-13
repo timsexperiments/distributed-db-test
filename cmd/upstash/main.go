@@ -18,9 +18,9 @@ func main() {
 	total, group := 1000, 100
 	tester := test.NewDbTester(db).WithTotal(total).WithWaitGroup(group)
 	writeTotal, writeAverage := tester.TimeWrites()
-	fmt.Printf("Wrote %d rows in %s. Average write time was %s.\n", total, writeTotal, writeAverage)
+	fmt.Printf("Wrote %d records in %s. Average write time was %s.\n", total, writeTotal, writeAverage)
 	readTotal, readAverage := tester.TimeReads()
-	fmt.Printf("Read %d rows in %s. Average read time was %s.\n", total, readTotal, readAverage)
+	fmt.Printf("Read %d records in %s. Average read time was %s.\n", total, readTotal, readAverage)
 }
 
 func getConfig() config {
