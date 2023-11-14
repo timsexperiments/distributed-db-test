@@ -33,3 +33,21 @@ Read 1000 records in 3m2.774055207s. Average read time was 182.774055ms.
 turso (Dallas - Frankfurt, Singapore):
 Wrote 1000 records in 19m54.874579497s. Average write time was 1.194874579s.
 Read 1000 records in 1m28.401310938s. Average read time was 88.40131ms.
+
+# CPU: Google Cloud Platform - Zone: Asia East1 B (Taiwan) - Image: e2-small 
+
+mock:
+Wrote 1000 records in 46.058804ms. Average write time was 46.058µs.
+Read 1000 records in 52.627073ms. Average read time was 52.627µs.
+
+upstash (REST API):
+Wrote 1000 records in 4m2.263064723s. Average write time was 242.263064ms.
+Read 1000 records in 5m53.269230431s. Average read time was 353.26923ms.
+
+planetscale (REST API):
+Wrote 1000 records in 4m38.058859065s. Average write time was 278.058859ms.
+Read 1000 records in 3m45.536241191s. Average read time was 225.536241ms.
+
+turso (Dallas - Frankfurt, Singapore):
+Wrote 1000 records in 43m57.292047658s. Average write time was 2.637292047s.
+Read 1000 records in 38m19.543321674s. Average read time was 2.299543321s.
